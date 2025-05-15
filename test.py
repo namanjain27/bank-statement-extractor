@@ -1,9 +1,8 @@
 
-from bank_statement_parser import BankStatementParser
+from statementExtractor import extract_transactions
 
-# def import_bank_statement("feb25.xlsx"):
-parser = BankStatementParser()
-transactions = parser.parse_statement(r"D:\codes\bank statement extractor\feb25.xlsx")
-print(transactions)
+transactions = extract_transactions(r"D:\codes\bank statement extractor\apr25.xls")
+with open("output.txt", "a") as f:
+    print(transactions, file=f)
 
 # Then use transactions in your app
